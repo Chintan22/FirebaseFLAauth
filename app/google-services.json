@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "467678350690",
+    "firebase_url": "https://fir-flaauth.firebaseio.com",
+    "project_id": "fir-flaauth",
+    "storage_bucket": "fir-flaauth.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:467678350690:android:c563fc6ae540c75a7d703b",
+        "android_client_info": {
+          "package_name": "com.example.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "467678350690-gll52bvf7fdkiqgfurr7nkev6iq9k23i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2ZxY82Q_2FUyHZZSpJcpg3-0faOCs7vQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "467678350690-gll52bvf7fdkiqgfurr7nkev6iq9k23i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
