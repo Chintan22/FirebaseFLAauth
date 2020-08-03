@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FLA.iml" filepath="$PROJECT_DIR$/.idea/modules/FLA.iml" group="FLA" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/FLA-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/FLA-app.iml" group="FLA/app" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/FirebaseFLAAuth.iml" filepath="$PROJECT_DIR$/.idea/modules/FirebaseFLAAuth.iml" group="FirebaseFLAAuth" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="FirebaseFLAAuth/app" />
     </modules>
