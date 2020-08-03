@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/nav_lectres"
+        android:icon="@drawable/ic_baseline_format_align_right_24"
+        android:title="Lectures" />
+    <item
+        android:id="@+id/nav_quiz"
+        android:icon="@drawable/ic_baseline_drag_handle_24"
+        android:title="Quiz" />
+    <item
+        android:id="@+id/nav_games"
+        android:icon="@drawable/ic_baseline_games_24"
+        android:title="Games" />
+
+    <item
+        android:id="@+id/nav_dictionary"
+        android:icon="@drawable/ic_baseline_apps_24"
+        android:title="Dictionary" />
+    <!--<item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/ic_baseline_account_circle_24"
+        android:title="Profile" />
+-->
+    <item
+        android:id="@+id/nav_chatbot"
+        android:icon="@drawable/ic_baseline_chat_24"
+        android:title="Chatbot" />
+
+    <item
+        android:id="@+id/nav_favorites"
+        android:icon="@drawable/ic_baseline_favorite_24"
+        android:title="Favorites" />
+
+    <item
+        android:id="@+id/nav_logout"
+        android:icon="@drawable/ic_logout"
+        android:title="Logout" />
+</menu>
