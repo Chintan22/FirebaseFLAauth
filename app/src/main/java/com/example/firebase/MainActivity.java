@@ -5,10 +5,12 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private FirebaseAuth.AuthStateListener authListener;
     private FirebaseAuth auth;
+    public TextView tvEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +37,16 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(getString(R.string.app_name));
         setSupportActionBar(toolbar);
+        tvEmail= (TextView) findViewById(R.id.tvEmail);
 
         //get firebase auth instance
         auth = FirebaseAuth.getInstance();
 
         //get current user
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        Log.d("firebase_user",""+user.getEmail());
+
+        tvEmail.setText(user.getEmail());
 
         authListener = new FirebaseAuth.AuthStateListener() {
             @Override

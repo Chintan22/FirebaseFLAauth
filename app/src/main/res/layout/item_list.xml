@@ -10,7 +10,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:textSize="12dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text="1111"
         android:background="@drawable/bg_ractangal"
         />
 

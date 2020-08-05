@@ -1,7 +1,7 @@
 package com.example.firebase;
 
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -27,7 +27,7 @@ public class LecturesListActivity extends AppCompatActivity {
         Toolbar toolbar= (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+        toolbar.setTitle("Android Tutorials");
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
@@ -56,7 +56,11 @@ public class LecturesListActivity extends AppCompatActivity {
         movieList.add(movie);
         movie=new VideoList("7.Android WebView Example","nB-relROsrY");
         movieList.add(movie);
-        movie=new VideoList("8.Fragments in Android - Part 1","mcF28h9WiGQ");
+        movie=new VideoList("8.Fragments in Android","mcF28h9WiGQ");
+        movieList.add(movie);
+        movie=new VideoList("9.Android Studio Tutorial For Beginners","ZLNO2c7nqjw");
+        movieList.add(movie);
+        movie=new VideoList("10.Android App Design Tutorial Using Relative Layout and Linear Layout With Examples","dAGxG5SamX4");
         movieList.add(movie);
         mAdapter.notifyDataSetChanged();
     }

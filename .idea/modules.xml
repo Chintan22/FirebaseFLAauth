@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Chaitanya-FLA.iml" filepath="$PROJECT_DIR$/.idea/modules/Chaitanya-FLA.iml" group="FLA" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Chaitanya-FLA-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Chaitanya-FLA-app.iml" group="FLA/app" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FLA.iml" filepath="$PROJECT_DIR$/.idea/modules/FLA.iml" group="FLA" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/FLA-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/FLA-app.iml" group="FLA/app" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/FirebaseFLAAuth.iml" filepath="$PROJECT_DIR$/.idea/modules/FirebaseFLAAuth.iml" group="FirebaseFLAAuth" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Puneeth-FLA.iml" filepath="$PROJECT_DIR$/.idea/modules/Puneeth-FLA.iml" group="FLA" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Puneeth-FLA-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Puneeth-FLA-app.iml" group="FLA/app" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Shashidhar-FLA.iml" filepath="$PROJECT_DIR$/.idea/modules/Shashidhar-FLA.iml" group="FLA" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Shashidhar-FLA-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Shashidhar-FLA-app.iml" group="FLA/app" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="FirebaseFLAAuth/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="FirebaseFLAAuth/app" />
     </modules>
   </component>
 </project>

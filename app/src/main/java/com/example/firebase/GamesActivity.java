@@ -2,9 +2,9 @@ package com.example.firebase;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
 public class GamesActivity extends AppCompatActivity {
@@ -16,6 +16,7 @@ public class GamesActivity extends AppCompatActivity {
 
         Toolbar toolbar= (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setTitle("Games");
 
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(GamesActivity.this);
@@ -30,5 +31,15 @@ public class GamesActivity extends AppCompatActivity {
                 });
 
         alertDialogBuilder.show();
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent7=new Intent(GamesActivity.this,DashboardActivity.class);
+        startActivity(intent7);
+        finish();
+
     }
 }
