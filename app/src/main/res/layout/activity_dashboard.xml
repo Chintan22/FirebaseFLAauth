@@ -61,14 +61,13 @@
             android:id="@+id/btn_quiz"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Quiz Game"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/colorAccent"
-            android:background="@color/colorPrimary"
             android:layout_centerHorizontal="true"
-            />
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="15dp"
+            android:background="@color/colorPrimary"
+            android:text="Quiz"
+            android:textColor="@color/colorAccent" />
 
         <Button
             android:id="@+id/btn_lectures"
