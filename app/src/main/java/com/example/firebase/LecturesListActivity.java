@@ -41,26 +41,26 @@ public class LecturesListActivity extends AppCompatActivity {
 
     }
     private void prepareMovieData() {
-        VideoList movie = new VideoList("1.Introduction and Installing and Configuring Java", "PQqEKrr8KSQ");
+        VideoList movie = new VideoList("1.Lesson 1: for beginners in French", "V86Y2OGmb0o");
         movieList.add(movie);
 
-        movie=new VideoList("2.How to install Android Studio","SLNTnJkg6EE");
+        movie=new VideoList("2.Lesson 2: Do you know the French Alphabet?","zw8LXdFuTqQ");
         movieList.add(movie);
-        movie=new VideoList("3.Building Your First Android App (Hello World Example)","taSwS5rhtmc");
+        movie=new VideoList("3.Lesson 3: French Pronunciation","62ZO5AeVpKw");
         movieList.add(movie);
-        movie=new VideoList("4.Android Activity Lifecycle","odqACn2Vgic");
+        movie=new VideoList("4.Learn 545 French Basic Vocabs and Phrases","ZXvW6BvMo4o");
         movieList.add(movie);
-        movie=new VideoList("5. Adding Two Numbers App (Simple Calculator)","7OQJIaXNmT4");
+        movie=new VideoList("5. Top 400 French Verbs For Everyday Life","_6au_o00-JE");
         movieList.add(movie);
-        movie=new VideoList("6. Android ImageView example","IgbGeOIPu8w");
+        movie=new VideoList("6. Learn French in 1 Hour - ALL of Your Intermediate French Questions Answered!","72Ki8-7sae0");
         movieList.add(movie);
-        movie=new VideoList("7.Android WebView Example","nB-relROsrY");
+        movie=new VideoList("7.Efficient training of French listening - Intermediate Level","RMUv9EfYkl8");
         movieList.add(movie);
-        movie=new VideoList("8.Fragments in Android","mcF28h9WiGQ");
+        movie=new VideoList("8.Learn French Pronunciation with Basic & Useful Phrases","6TCWvSRrnCk");
         movieList.add(movie);
-        movie=new VideoList("9.Android Studio Tutorial For Beginners","ZLNO2c7nqjw");
+        movie=new VideoList("9.French Pronunciation - Les Voyelles Nasales \"ON\" - \"EN\" - \"AIN\"- Free French Phonetic Lesson","j_Qs75dfpko");
         movieList.add(movie);
-        movie=new VideoList("10.Android App Design Tutorial Using Relative Layout and Linear Layout With Examples","dAGxG5SamX4");
+        movie=new VideoList("10.TOP 30 MUST-KNOW FRENCH QUESTIONS","1x5AifZ4-LE");
         movieList.add(movie);
         mAdapter.notifyDataSetChanged();
     }
