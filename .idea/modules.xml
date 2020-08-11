@@ -7,6 +7,8 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/FLA-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/FLA-app.iml" group="FLA/app" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/FirebaseFLAauth.iml" filepath="$PROJECT_DIR$/.idea/modules/FirebaseFLAauth.iml" group="FirebaseFLAauth" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/FirebaseFLAauth-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/FirebaseFLAauth-app.iml" group="FirebaseFLAauth/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Puneeth-FLA.iml" filepath="$PROJECT_DIR$/.idea/modules/Puneeth-FLA.iml" group="FLA" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Puneeth-FLA-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Puneeth-FLA-app.iml" group="FLA/app" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="FirebaseFLAAuth/app" />
     </modules>
   </component>
