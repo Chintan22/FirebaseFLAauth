@@ -7,32 +7,29 @@ package com.example.firebase.models;
 public class Question {
 
     public String questions[] = {
-            "What was the first phone released that ran the Android OS?",
-            "What is the name of the program that converts Java byte code into Dalvik byte code?",
-            "Which company developed android?",
-            "Which Media Format Is Not Supported By Android",
-            "In Which Directory XML Layout Files Are Stored",
-            "How Many Levels Of Securities Are In Android?",
-            "What Are The Functionalities In AsyncTask In Android?"
+            "Where are you from?",
+            "Where are you going?",
+            "What are you studying?",
+            "What does your father do?",
+            "Which school are you?",
+
     };
 
     public String choices[][] = {
-            {"Google gPhone", " T-Mobile G1", " Motorola Droid", " HTC Hero"},
-            {"Android Interpretive Compiler (AIC)", "Dalvik Converter", "Dex compiler", "Mobile Interpretive Compiler (MIC)"},
-            {"Apple ", "Google", "Android Inc", "Nokia"},
-            {"MP4","AVI","MIDI","MPEG"},
-            {"/assets","/src","/res/values","/res/layout"},
-            {"Android Level Security","App And Kernel Level Security","Java Level Security","None Of The Above"},
-            {"OnPreExecution()","OnPostExecution()","DoInBackground()","OnProgressUpdate()"},
+            {"D'où êtes-vous", "quel âge avez-vous", "ton âge", "que fais-tu"},
+            {"où allez-vous", "quel endroit", "je t'aime", "J'aime la nourriture"},
+            {"quel âge avez-vous", "où allez-vous", "que fais-tu", "je t'aime"},
+            {"quel endroit","que fais-tu","je t'aime","ton père fait"},
+            {"je t'aime","quel endroit","quelle école es-tu","ton âge"},
+
     };
 
     public String correctAnswer[] = {
-        "Google gPhone",
-        "Dalvik Converter",
-        "Google",
-            "AVI",
-            "/res/layout",
-            "App And Kernel Level Security",
+        "D'où êtes-vous",
+        "où allez-vous",
+        "que fais-tu",
+            "ton père fait",
+            "quelle école es-tu",
             "OnPostExecution()"
     };
 
