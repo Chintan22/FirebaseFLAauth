@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".LecturesActivity">
+    tools:context=".activity.LecturesActivity">
 
 
     <android.support.design.widget.AppBarLayout
