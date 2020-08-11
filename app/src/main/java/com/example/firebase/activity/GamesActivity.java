@@ -23,7 +23,7 @@ public class GamesActivity extends AppCompatActivity {
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(GamesActivity.this);
         alertDialogBuilder
-                .setMessage("This Features is Available Coming soon")
+                .setMessage("This Features is Coming soon")
                 .setCancelable(false)
                 .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     @Override

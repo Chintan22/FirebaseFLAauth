@@ -98,9 +98,9 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     private void GameOver() {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(QuizActivity.this);
         alertDialogBuilder
-                .setMessage("Game Over")
+                .setMessage("Quiz Over")
                 .setCancelable(false)
-                .setPositiveButton("New Game", new DialogInterface.OnClickListener() {
+                .setPositiveButton("New Quiz", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
