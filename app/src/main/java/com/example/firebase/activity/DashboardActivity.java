@@ -1,16 +1,16 @@
 package com.example.firebase.activity;
 
 import android.content.Intent;
+import androidx.annotation.NonNull;
 
-import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
+import com.example.firebase.BuildConfig;
+import com.google.android.material.navigation.NavigationView;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.appcompat.BuildConfig;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -34,6 +34,11 @@ public class DashboardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dashboard);
         Toolbar toolbar= (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        auth = FirebaseAuth.getInstance();
+
+
+
         tvUserName= (TextView) findViewById(R.id.tvUserName);
         tvEmail= (TextView) findViewById(R.id.tvEmail);
 
@@ -51,8 +56,11 @@ public class DashboardActivity extends AppCompatActivity {
         btn_quiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1=new Intent(DashboardActivity.this,QuizActivity.class);
-                startActivity(intent1);
+
+                if (auth.getCurrentUser() != null) {
+                    Intent intent1=new Intent(DashboardActivity.this,QuizActivity.class);
+                    startActivity(intent1);
+                }
 
             }
         });
@@ -60,34 +68,38 @@ public class DashboardActivity extends AppCompatActivity {
         btn_lectures.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(DashboardActivity.this,LecturesListActivity.class);
-                startActivity(intent);
-
+                if (auth.getCurrentUser() != null) {
+                    Intent intent1=new Intent(DashboardActivity.this,LecturesListActivity.class);
+                    startActivity(intent1);
+                }
             }
         });
 
         btn_favorites.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent2=new Intent(DashboardActivity.this,GamesActivity.class);
-                startActivity(intent2);
-
+                if (auth.getCurrentUser() != null) {
+                    Intent intent1=new Intent(DashboardActivity.this,GamesActivity.class);
+                    startActivity(intent1);
+                }
             }
         });
         btn_dictionary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent3=new Intent(DashboardActivity.this,DictionaryActivity.class);
-                startActivity(intent3);
-
+                if (auth.getCurrentUser() != null) {
+                    Intent intent1=new Intent(DashboardActivity.this,DictionaryActivity.class);
+                    startActivity(intent1);
+                }
             }
         });
         btn_chatbot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent5=new Intent(DashboardActivity.this,ChatbotActivity.class);
-                startActivity(intent5);
-
+                if (auth.getCurrentUser() != null) {
+                    Intent intent1=new Intent(DashboardActivity.this,ChatbotActivity.class);
+                    startActivity(intent1);
+                }
             }
         });
 

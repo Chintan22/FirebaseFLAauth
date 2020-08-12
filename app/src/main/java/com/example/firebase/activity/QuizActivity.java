@@ -1,9 +1,11 @@
 package com.example.firebase.activity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+import android.content.SharedPreferences;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +28,8 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     private int questionLength = question.questions.length;
 
     Random random;
+    SharedPreferences sharedpreferences;
+    Integer points=0;
 
 
     @Override
@@ -35,7 +39,8 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
         random = new Random();
 
-
+        sharedpreferences = getSharedPreferences("quizdata", Context.MODE_PRIVATE);
+        points=sharedpreferences.getInt("points",0);
         btn_one = (Button) findViewById(R.id.btn_one);
         btn_one.setOnClickListener(this);
         btn_two = (Button) findViewById(R.id.btn_two);
@@ -56,7 +61,12 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_one:
                 if (btn_one.getText() == answer) {
                     Toast.makeText(QuizActivity.this, "You Are Correct", Toast.LENGTH_SHORT).show();
+                    SharedPreferences.Editor editor = sharedpreferences.edit();
+                    points=points+1;
+                    editor.putInt("points", points);
+                    editor.commit();
                     NextQuestion(random.nextInt(questionLength));
+
                 } else {
                     GameOver();
                 }
@@ -67,6 +77,10 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
                 if (btn_two.getText() == answer) {
                     Toast.makeText(QuizActivity.this, "You Are Correct", Toast.LENGTH_SHORT).show();
                     NextQuestion(random.nextInt(questionLength));
+                    SharedPreferences.Editor editor = sharedpreferences.edit();
+                    points=points+1;
+                    editor.putInt("points", points);
+                    editor.commit();
                 } else {
                     GameOver();
                 }
@@ -76,6 +90,10 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_three:
                 if (btn_three.getText() == answer) {
                     Toast.makeText(QuizActivity.this, "You Are Correct", Toast.LENGTH_SHORT).show();
+                    SharedPreferences.Editor editor = sharedpreferences.edit();
+                    points=points+1;
+                    editor.putInt("points", points);
+                    editor.commit();
                     NextQuestion(random.nextInt(questionLength));
                 } else {
                     GameOver();
@@ -86,6 +104,10 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_four:
                 if (btn_four.getText() == answer) {
                     Toast.makeText(QuizActivity.this, "You Are Correct", Toast.LENGTH_SHORT).show();
+                    SharedPreferences.Editor editor = sharedpreferences.edit();
+                    points=points+1;
+                    editor.putInt("points", points);
+                    editor.commit();
                     NextQuestion(random.nextInt(questionLength));
                 } else {
                     GameOver();
@@ -98,7 +120,8 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     private void GameOver() {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(QuizActivity.this);
         alertDialogBuilder
-                .setMessage("Quiz Over")
+                .setTitle("Quiz Over")
+                .setMessage("Your Points: "+points.toString())
                 .setCancelable(false)
                 .setPositiveButton("New Quiz", new DialogInterface.OnClickListener() {
                     @Override
@@ -110,8 +133,26 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         System.exit(0);
+                        points=0;
+                        SharedPreferences.Editor editor = sharedpreferences.edit();
+                        editor.putInt("points", points);
+                        editor.commit();
                     }
-                });
+                }).setNeutralButton("Share Points", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Intent intent = new Intent(android.content.Intent.ACTION_SEND);
+                /*This will be the actual content you wish you share.*/
+                /*The type of the content is text, obviously.*/
+                intent.setType("text/plain");
+                /*Applying information Subject and Body.*/
+                intent.putExtra(android.content.Intent.EXTRA_SUBJECT,"Your Achivement Points");
+                intent.putExtra(android.content.Intent.EXTRA_TEXT, "Your Achivement Points is :"+points.toString());
+                /*Fire!*/
+                startActivity(Intent.createChooser(intent, "Your Achivement Points is "));
+            }
+        })
+        ;
         alertDialogBuilder.show();
 
     }

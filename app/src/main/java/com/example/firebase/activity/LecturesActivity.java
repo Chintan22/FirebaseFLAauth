@@ -1,9 +1,9 @@
 package com.example.firebase.activity;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.widget.Toast;
 
 import com.example.firebase.R;
@@ -23,7 +23,7 @@ public class LecturesActivity extends YouTubeBaseActivity implements  YouTubePla
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lectures);
         Toolbar toolbar= (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Android Video List");
+        toolbar.setTitle("Master French language easily");
         Intent intent=getIntent();
         linkname=intent.getStringExtra("linkname");
         youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);

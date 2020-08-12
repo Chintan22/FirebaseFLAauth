@@ -1,14 +1,12 @@
 package com.example.firebase.activity;
 
-
-
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.firebase.R;
 import com.example.firebase.adapter.DictionaryListAdapter;
@@ -46,7 +44,7 @@ public class DictionaryActivity extends AppCompatActivity {
 
     private void prepareDictionaryData() {
 
-        Dictionary dictionary = new Dictionary("accompany");
+        Dictionary dictionary = new Dictionary("word1");
         dictionaryArrayList.add(dictionary);
 
         dictionary = new Dictionary("accurate");
