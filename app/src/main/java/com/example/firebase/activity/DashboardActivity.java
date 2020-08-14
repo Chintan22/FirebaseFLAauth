@@ -79,8 +79,8 @@ public class DashboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (auth.getCurrentUser() != null) {
-                    Intent intent1=new Intent(DashboardActivity.this,GamesActivity.class);
-                    startActivity(intent1);
+                    Intent intent2=new Intent(DashboardActivity.this, GamesActivity.class);
+                    startActivity(intent2);
                 }
             }
         });

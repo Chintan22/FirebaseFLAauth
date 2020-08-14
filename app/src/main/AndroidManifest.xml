@@ -22,6 +22,7 @@
         <activity android:name=".activity.GamesActivity" />
         <activity android:name=".activity.ChatbotActivity" />
         <activity android:name=".activity.LecturesActivity" />
+        <activity android:name=".activity.BossAct" ></activity>
         <activity
             android:name=".activity.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">
