@@ -14,6 +14,9 @@ import android.widget.Toast;
 
 import com.example.firebase.R;
 import com.example.firebase.models.Question;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.textview.MaterialTextView;
 
 import java.util.Random;
 
@@ -118,29 +121,21 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void GameOver() {
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(QuizActivity.this);
-        alertDialogBuilder
-                .setTitle("Quiz Over")
-                .setMessage("Your Points: "+points.toString())
-                .setCancelable(false)
-                .setPositiveButton("New Quiz", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
-                    }
-                })
-                .setNegativeButton("Exit", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        System.exit(0);
-                        points=0;
-                        SharedPreferences.Editor editor = sharedpreferences.edit();
-                        editor.putInt("points", points);
-                        editor.commit();
-                    }
-                }).setNeutralButton("Share Points", new DialogInterface.OnClickListener() {
+
+        final MaterialAlertDialogBuilder alertDialogBuilder = new MaterialAlertDialogBuilder(QuizActivity.this);
+        final View customLayout = getLayoutInflater().inflate(R.layout.layout_winprice, null);
+        MaterialButton btnShare,btnOk;
+        MaterialTextView tvPoints;
+        alertDialogBuilder.setView(customLayout).setCancelable(true);
+
+        btnShare=customLayout.findViewById(R.id.btnShare);
+
+        tvPoints=customLayout.findViewById(R.id.tvYourPoints);
+        tvPoints.setText("YOUR ACHIVEMENT POINTS ARE :"+points);
+        btnShare.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
+            public void onClick(View v) {
+
                 Intent intent = new Intent(android.content.Intent.ACTION_SEND);
                 /*This will be the actual content you wish you share.*/
                 /*The type of the content is text, obviously.*/
@@ -150,9 +145,11 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
                 intent.putExtra(android.content.Intent.EXTRA_TEXT, "Your Achivement Points is :"+points.toString());
                 /*Fire!*/
                 startActivity(Intent.createChooser(intent, "Your Achivement Points is "));
+
             }
-        })
-        ;
+        });
+
+
         alertDialogBuilder.show();
 
     }
