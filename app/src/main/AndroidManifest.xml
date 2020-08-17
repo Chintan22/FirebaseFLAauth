@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +14,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.LecturesListActivity"></activity>
+        <activity android:name=".activity.LecturesListActivity" ></activity>
         <activity android:name=".activity.ProfileActivity" />
         <activity android:name=".activity.QuizActivity" />
         <activity android:name=".activity.DashboardActivity" />
@@ -22,7 +23,7 @@
         <activity android:name=".activity.GamesActivity" />
         <activity android:name=".activity.ChatbotActivity" />
         <activity android:name=".activity.LecturesActivity" />
-        <activity android:name=".activity.BossAct" ></activity>
+        <activity android:name=".activity.BossAct" />
         <activity
             android:name=".activity.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">

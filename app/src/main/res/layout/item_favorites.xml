@@ -23,9 +23,8 @@
     android:id="@+id/ic_like"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:src="@drawable/ic_heart"
+    android:src="@drawable/ic_heart_fill"
     android:layout_gravity="center"
-    android:layout_margin="@dimen/_10sdp"
     />
 
 

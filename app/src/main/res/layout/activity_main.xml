@@ -45,6 +45,9 @@
                 android:id="@+id/tvEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:textSize="@dimen/_12sdp"
                 />
 
             <EditText
@@ -52,6 +55,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_email"
+                android:layout_margin="@dimen/_3sdp"
+                style="@style/EditTextStyle"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:singleLine="true" />
@@ -61,6 +66,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_new_email"
+                style="@style/EditTextStyle"
+                android:layout_margin="@dimen/_3sdp"
+
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:singleLine="true" />
@@ -71,6 +79,8 @@
                 android:layout_height="wrap_content"
                 android:focusableInTouchMode="true"
                 android:hint="@string/hint_password"
+                style="@style/EditTextStyle"
+                android:layout_margin="@dimen/_3sdp"
 
                 android:imeOptions="actionUnspecified"
                 android:inputType="textPassword"
@@ -83,44 +93,42 @@
                 android:layout_height="wrap_content"
                 android:focusableInTouchMode="true"
                 android:hint="@string/new_pass"
+                style="@style/EditTextStyle"
+                android:layout_margin="@dimen/_3sdp"
 
                 android:imeOptions="actionUnspecified"
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:singleLine="true" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/changeEmail"
-                style="?android:textAppearanceSmall"
-                android:layout_width="wrap_content"
+                style="@style/MaterialButtonStyle.Filled"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimaryDark"
                 android:text="@string/btn_change"
-                android:textColor="@android:color/white"
-                android:textStyle="bold" />
 
-            <Button
+                 />
+
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/changePass"
-                style="?android:textAppearanceSmall"
-                android:layout_width="wrap_content"
+                style="@style/MaterialButtonStyle.Filled"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimaryDark"
                 android:text="@string/btn_change"
-                android:textColor="@android:color/white"
-                android:textStyle="bold" />
+                />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/send"
-                style="?android:textAppearanceSmall"
-                android:layout_width="wrap_content"
+                style="@style/MaterialButtonStyle.Filled"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimaryDark"
                 android:text="@string/btn_send"
-                android:textColor="@android:color/white"
-                android:textStyle="bold" />
+                 />
 
             <ProgressBar
                 android:id="@+id/progressBar"
@@ -128,63 +136,56 @@
                 android:layout_height="30dp"
                 android:visibility="gone" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/remove"
-                style="?android:textAppearanceSmall"
-                android:layout_width="wrap_content"
+                style="@style/MaterialButtonStyle.Filled"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimaryDark"
                 android:text="@string/btn_remove"
-                android:textColor="@android:color/white"
-                android:textStyle="bold" />
+                 />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/change_email_button"
-                style="?android:textAppearanceSmall"
+                style="@style/MaterialButtonStyle.Filled"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/change_email"
-                android:textStyle="bold" />
+                 />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/change_password_button"
-                style="?android:textAppearanceSmall"
+                style="@style/MaterialButtonStyle.Filled"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
                 android:text="@string/change_password"
-                android:textStyle="bold" />
+                 />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/sending_pass_reset_button"
-                style="?android:textAppearanceSmall"
+                style="@style/MaterialButtonStyle.Filled"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
                 android:text="@string/send_password_reset_email"
-                android:textStyle="bold" />
+                 />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/remove_user_button"
-                style="?android:textAppearanceSmall"
+                style="@style/MaterialButtonStyle.Filled"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/remove_user"
-                android:textStyle="bold" />
+                 />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/sign_out"
-                style="?android:textAppearanceSmall"
+                style="@style/MaterialButtonStyle.Stroked"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
                 android:text="@string/btn_sign_out"
-                android:textColor="@android:color/white"
-                android:textStyle="bold" />
+                 />
 
         </LinearLayout>
 

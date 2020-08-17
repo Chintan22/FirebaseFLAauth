@@ -1,48 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
+    android:orientation="vertical"
     tools:context="com.example.firebase.activity.LoginActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/white"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="@dimen/activity_horizontal_margin">
 
 
         <ImageView
+
             android:layout_width="@dimen/logo_w_h"
             android:layout_height="@dimen/logo_w_h"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="30dp"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@drawable/logo" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
-            <EditText
+
+        <EditText
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_name"
                 android:inputType="text"
                 android:maxLines="1"
+                android:layout_marginStart="@dimen/spacing_standard"
+                android:layout_marginTop="@dimen/spacing_standard_new"
+                android:layout_marginEnd="@dimen/spacing_standard"
+                style="@style/EditTextStyle"
+
                 android:singleLine="true"
-                android:textColor="@android:color/white" />
+                 />
 
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/email"
@@ -51,15 +54,15 @@
                 android:hint="@string/email"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
+                android:layout_marginStart="@dimen/spacing_standard"
+                android:layout_marginTop="@dimen/spacing_standard_new"
+                android:layout_marginEnd="@dimen/spacing_standard"
+                style="@style/EditTextStyle"
+
                 android:singleLine="true"
-                android:textColor="@android:color/white" />
-
-        </com.google.android.material.textfield.TextInputLayout>
+                 />
 
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/mobileno"
@@ -70,15 +73,15 @@
                 android:imeOptions="actionUnspecified"
                 android:inputType="number"
                 android:maxLines="1"
+                android:layout_marginStart="@dimen/spacing_standard"
+                android:layout_marginTop="@dimen/spacing_standard_new"
+                android:layout_marginEnd="@dimen/spacing_standard"
+                style="@style/EditTextStyle"
+
                 android:singleLine="true"
-                android:textColor="@android:color/white" />
-
-        </com.google.android.material.textfield.TextInputLayout>
+               />
 
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/address"
@@ -87,14 +90,14 @@
                 android:focusableInTouchMode="true"
                 android:hint="@string/hint_address"
                 android:inputType="textMultiLine"
-                android:textColor="@android:color/white" />
+                android:layout_marginStart="@dimen/spacing_standard"
+                android:layout_marginTop="@dimen/spacing_standard_new"
+                android:layout_marginEnd="@dimen/spacing_standard"
+                style="@style/EditTextStyle"
 
-        </com.google.android.material.textfield.TextInputLayout>
+                 />
 
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/password"
@@ -106,15 +109,15 @@
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:singleLine="true"
-                android:textColor="@android:color/white" />
+                android:layout_marginStart="@dimen/spacing_standard"
+                android:layout_marginTop="@dimen/spacing_standard_new"
+                android:layout_marginEnd="@dimen/spacing_standard"
+                style="@style/EditTextStyle"
+ />
 
-        </com.google.android.material.textfield.TextInputLayout>
 
 
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/confirmpassword"
@@ -124,45 +127,49 @@
                 android:hint="@string/hint_confirm_password"
                 android:imeOptions="actionUnspecified"
                 android:inputType="textPassword"
+                android:layout_marginStart="@dimen/spacing_standard"
+                android:layout_marginTop="@dimen/spacing_standard_new"
+                android:layout_marginEnd="@dimen/spacing_standard"
+                style="@style/EditTextStyle"
+
                 android:maxLines="1"
                 android:singleLine="true"
-                android:textColor="@android:color/white" />
+           />
 
-        </com.google.android.material.textfield.TextInputLayout>
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/sign_up_button"
-            style="?android:textAppearanceSmall"
+            style="@style/MaterialButtonStyle.Filled"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@color/colorAccent"
             android:text="@string/action_sign_in_short"
-            android:textColor="@android:color/black"
-            android:textStyle="bold" />
+             />
 
         <Button
             android:id="@+id/btn_reset_password"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dip"
-            android:background="@null"
+
+            style="@style/MaterialButtonStyle.Filled"
             android:text="@string/btn_forgot_password"
             android:textAllCaps="false"
-            android:textColor="@color/colorAccent" />
+            />
 
         <!-- Link to Login Screen -->
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/sign_in_button"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dip"
-            android:background="@null"
+            style="@style/MaterialButtonStyle.Stroked"
             android:text="@string/btn_link_to_login"
             android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="15dp" />
+           />
+
     </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -171,4 +178,4 @@
         android:layout_gravity="center|bottom"
         android:layout_marginBottom="20dp"
         android:visibility="gone" />
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>

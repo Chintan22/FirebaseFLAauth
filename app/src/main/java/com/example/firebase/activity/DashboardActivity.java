@@ -3,7 +3,7 @@ package com.example.firebase.activity;
 import android.content.Intent;
 import androidx.annotation.NonNull;
 
-import com.example.firebase.BuildConfig;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.navigation.NavigationView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -15,9 +15,11 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.firebase.R;
+import com.google.firebase.BuildConfig;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -26,7 +28,8 @@ public class DashboardActivity extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener authListener;
     private FirebaseAuth auth;
     public TextView tvUserName,tvEmail;
-    public Button btn_quiz,btn_lectures,btn_dictionary,btn_favorites,btn_chatbot;
+    public ImageView imageView;
+    public MaterialButton btn_quiz,btn_lectures,btn_dictionary,btn_games,btn_chatbot,btn_favorites;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,16 +45,16 @@ public class DashboardActivity extends AppCompatActivity {
         tvUserName= (TextView) findViewById(R.id.tvUserName);
         tvEmail= (TextView) findViewById(R.id.tvEmail);
 
-        btn_quiz= (Button) findViewById(R.id.btn_quiz);
-        btn_lectures= (Button) findViewById(R.id.btn_lectures);
-        btn_dictionary= (Button) findViewById(R.id.btn_dictionary);
-        btn_favorites= (Button) findViewById(R.id.btn_games);
-        btn_chatbot= (Button) findViewById(R.id.btn_chantbot);
+        btn_favorites=findViewById(R.id.btn_favorites);
+        btn_quiz= findViewById(R.id.btn_quiz);
+        imageView=findViewById(R.id.profile);
+        btn_lectures= findViewById(R.id.btn_lectures);
+        btn_dictionary=  findViewById(R.id.btn_dictionary);
+        btn_games= findViewById(R.id.btn_games);
+        btn_chatbot=  findViewById(R.id.btn_chantbot);
         auth = FirebaseAuth.getInstance();
 
-        //get current user
-        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        Log.d("firebase_user",""+user.getEmail());
+
 
         btn_quiz.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +64,10 @@ public class DashboardActivity extends AppCompatActivity {
                     Intent intent1=new Intent(DashboardActivity.this,QuizActivity.class);
                     startActivity(intent1);
                 }
+                else {
+                    startActivity(new Intent(DashboardActivity.this,LoginActivity.class));
+                    finish();
+                }
 
             }
         });
@@ -68,28 +75,46 @@ public class DashboardActivity extends AppCompatActivity {
         btn_lectures.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (auth.getCurrentUser() != null) {
-                    Intent intent1=new Intent(DashboardActivity.this,LecturesListActivity.class);
-                    startActivity(intent1);
-                }
+
+                Intent intent1=new Intent(DashboardActivity.this,LecturesListActivity.class);
+                startActivity(intent1);
+
             }
         });
 
+
+        btn_dictionary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent1=new Intent(DashboardActivity.this,DictionaryActivity.class);
+                startActivity(intent1);
+
+            }
+        });
         btn_favorites.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (auth.getCurrentUser() != null) {
-                    Intent intent2=new Intent(DashboardActivity.this, GamesActivity.class);
-                    startActivity(intent2);
+                    Intent intent1=new Intent(DashboardActivity.this,FavoritesActivity.class);
+                    startActivity(intent1);
+                }
+                else {
+                    startActivity(new Intent(DashboardActivity.this,LoginActivity.class));
+                    finish();
                 }
             }
         });
-        btn_dictionary.setOnClickListener(new View.OnClickListener() {
+        btn_games.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (auth.getCurrentUser() != null) {
-                    Intent intent1=new Intent(DashboardActivity.this,DictionaryActivity.class);
+                    Intent intent1=new Intent(DashboardActivity.this,GamesActivity.class);
                     startActivity(intent1);
+                }
+                else {
+                    startActivity(new Intent(DashboardActivity.this,LoginActivity.class));
+                    finish();
                 }
             }
         });
@@ -100,11 +125,27 @@ public class DashboardActivity extends AppCompatActivity {
                     Intent intent1=new Intent(DashboardActivity.this,ChatbotActivity.class);
                     startActivity(intent1);
                 }
+                else {
+                    startActivity(new Intent(DashboardActivity.this,LoginActivity.class));
+                    finish();
+                }
             }
         });
+//get current user
+        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if(user!=null) {
+            tvEmail.setVisibility(View.VISIBLE);
+            tvUserName.setVisibility(View.VISIBLE);
+            imageView.setVisibility(View.VISIBLE);
+            tvUserName.setText(user.getDisplayName());
+            tvEmail.setText(user.getEmail());
+        }
+        else {
+            tvEmail.setVisibility(View.GONE);
+            tvUserName.setVisibility(View.GONE);
+            imageView.setVisibility(View.GONE);
 
-        tvUserName.setText(user.getDisplayName());
-        tvEmail.setText(user.getEmail());
+        }
         authListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -127,7 +168,13 @@ public class DashboardActivity extends AppCompatActivity {
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         View hView =  navigationView.getHeaderView(0);
         TextView textView= (TextView) hView.findViewById(R.id.tvEmail);
-        textView.setText(user.getEmail());
+        if (user!=null) {
+            textView.setText(user.getEmail());
+        }
+        else
+        {
+            textView.setText("Guest User");
+        }
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
@@ -135,17 +182,27 @@ public class DashboardActivity extends AppCompatActivity {
                 switch(id)
                 {
                     case R.id.nav_profile:
-
-                        Intent intent5=new Intent(DashboardActivity.this,ProfileActivity.class);
-                        startActivity(intent5);
-                        finish();
+                        if (user!=null) {
+                            Intent intent5 = new Intent(DashboardActivity.this, ProfileActivity.class);
+                            startActivity(intent5);
+                            finish();
+                        }
+                        else {
+                            startActivity(new Intent(DashboardActivity.this,LoginActivity.class));
+                            finish();
+                        }
                         break;
 
                     case R.id.nav_logout:
-
-                        Intent intent7=new Intent(DashboardActivity.this,MainActivity.class);
-                        startActivity(intent7);
-                        finish();
+                        if (user!=null) {
+                            Intent intent7 = new Intent(DashboardActivity.this, MainActivity.class);
+                            startActivity(intent7);
+                            finish();
+                        }
+                        else {
+                            startActivity(new Intent(DashboardActivity.this,LoginActivity.class));
+                            finish();
+                        }
                         break;
 
                     case R.id.nav_share :

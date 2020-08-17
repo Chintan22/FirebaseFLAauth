@@ -8,6 +8,10 @@
     android:layout_width="match_parent">
 
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -32,11 +36,22 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
+        <ImageView
+            android:layout_width="@dimen/logo_w_h"
+            android:layout_height="@dimen/logo_w_h"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="30dp"
+            android:src="@drawable/logo"
+            tools:srcCompat="@drawable/logo" />
+
+
 
         <ImageView
+            android:id="@+id/profile"
             android:layout_width="75dp"
             android:layout_height="75dp"
             android:layout_gravity="center"
+            android:visibility="gone"
             android:src="@drawable/ic_baseline_account_circle_24"
             />
 
@@ -54,39 +69,57 @@
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:padding="5dp"
+            android:visibility="gone"
             android:textSize="12dp"
             />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_quiz"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Quiz"
+            android:text="Quiz Game"
+            style="@style/MaterialButtonStyle.Filled"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginTop="5dp"
-            android:textColor="@color/colorAccent"
-            android:background="@color/colorPrimary"
-            android:layout_centerHorizontal="true"
+
             />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_lectures"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Lectures"
-            android:textColor="@color/colorAccent"
+            style="@style/MaterialButtonStyle.Filled"
+
 
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginTop="5dp"
 
-            android:background="@color/colorPrimary"
+
 
             android:layout_centerHorizontal="true"
             />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_favorites"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Favorites"
+            style="@style/MaterialButtonStyle.Filled"
+
+
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+
+
+
+            android:layout_centerHorizontal="true"
+            />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_dictionary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -94,21 +127,22 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginTop="5dp"
-            android:textColor="@color/colorAccent"
 
-            android:background="@color/colorPrimary"
+            style="@style/MaterialButtonStyle.Filled"
+
+
 
             android:layout_centerHorizontal="true"
             />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_games"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Games"
-            android:textColor="@color/colorAccent"
 
-            android:background="@color/colorPrimary"
+
+            style="@style/MaterialButtonStyle.Filled"
 
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
@@ -118,23 +152,23 @@
             />
 
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_chantbot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Chatbot"
-            android:background="@color/colorPrimary"
-            android:textColor="@color/colorAccent"
 
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginTop="5dp"
+            style="@style/MaterialButtonStyle.Filled"
 
             android:layout_centerHorizontal="true"
             />
 
 
     </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
 
     <com.google.android.material.navigation.NavigationView

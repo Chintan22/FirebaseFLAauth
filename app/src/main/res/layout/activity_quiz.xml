@@ -1,55 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     >
 
-    <Button
-        android:id="@+id/btn_one"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/btn_two"/>
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp">
 
-    <Button
-        android:id="@+id/btn_two"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/btn_three"/>
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimaryDark"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:title="Quiz"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-    <Button
-        android:id="@+id/btn_three"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/btn_four"/>
-
-    <Button
-        android:id="@+id/btn_four"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
-        android:layout_alignParentBottom="true"/>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <TextView
         android:id="@+id/tv_question"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:text="Question"
         android:textSize="25sp"
         android:paddingTop="20sp"
         android:gravity="center_horizontal"
+        android:layout_below="@id/toolbar"
         android:layout_above="@+id/btn_one"
-        android:layout_alignParentTop="true"/>
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:layout_margin="@dimen/_5sdp"
+        style="@style/MaterialButtonStyle.Stroked"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/btn_two"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:layout_margin="@dimen/_5sdp"
+
+        style="@style/MaterialButtonStyle.Stroked"
+
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/btn_three"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_three"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+
+        android:text="Button"
+        style="@style/MaterialButtonStyle.Stroked"
+
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/btn_four"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_four"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:layout_margin="@dimen/_5sdp"
+
+        style="@style/MaterialButtonStyle.Stroked"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:layout_alignParentBottom="true"/>
 
 
-</RelativeLayout>
+
+
+</LinearLayout>

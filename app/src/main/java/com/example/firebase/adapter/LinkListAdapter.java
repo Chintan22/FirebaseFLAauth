@@ -19,7 +19,7 @@ public class LinkListAdapter extends RecyclerView.Adapter<LinkListAdapter.MyView
     private List<VideoList> moviesList;
     public Context context;
 
-        public class MyViewHolder extends RecyclerView.ViewHolder {
+    public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title;
 
         public MyViewHolder(View view) {

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="180dp"
     android:background="@color/colorPrimary"
@@ -12,7 +13,8 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:layout_margin="10dp"
-        android:src="@drawable/ic_baseline_account_circle_24" />
+        android:src="@drawable/ic_baseline_account_circle_24"
+        app:tint="@color/white" />
 
     <TextView
         android:id="@+id/tvEmail"
@@ -22,6 +24,7 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:layout_margin="3dp"
+        android:textColor="@color/white"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
 
