@@ -24,8 +24,10 @@
         <activity android:name=".activity.ChatbotActivity" />
         <activity android:name=".activity.LecturesActivity" />
         <activity android:name=".activity.BossAct" />
+        <activity android:name=".activity.CustomerCareChatActivity" />
+        <activity android:name=".activity.LoginActivity" />
         <activity
-            android:name=".activity.LoginActivity"
+            android:name=".activity.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,6 +47,8 @@
             android:name=".activity.ResetPasswordActivity"
             android:label="@string/title_activity_reset_password"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.NewChatBotActivity" />
+        <activity android:name=".activity.NewDictionaryActivity" />
     </application>
 
 </manifest>

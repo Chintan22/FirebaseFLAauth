@@ -87,7 +87,8 @@ public class DashboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent1=new Intent(DashboardActivity.this,DictionaryActivity.class);
+                Intent intent1=new Intent(DashboardActivity.this,NewDictionaryActivity.class);
+//                Intent intent1=new Intent(DashboardActivity.this,DictionaryActivity.class);
                 startActivity(intent1);
 
             }
@@ -122,8 +123,12 @@ public class DashboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (auth.getCurrentUser() != null) {
-                    Intent intent1=new Intent(DashboardActivity.this,ChatbotActivity.class);
-                    startActivity(intent1);
+                    final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                    Intent intent5 = new Intent(DashboardActivity.this, NewChatBotActivity.class);
+                    if(user.getEmail().split("@")[0].toLowerCase().contains("customercare")){
+                        intent5 = new Intent(DashboardActivity.this, CustomerCareChatActivity.class);
+                    }
+                    startActivity(intent5);
                 }
                 else {
                     startActivity(new Intent(DashboardActivity.this,LoginActivity.class));
