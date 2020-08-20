@@ -1,5 +1,6 @@
 package com.example.firebase.activity;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,6 +40,16 @@ public class BossAct extends AppCompatActivity implements View.OnClickListener{
         textScreen.setTypeface(typeface);
         textTitle.setTypeface(typeface);
         textBtn.setTypeface(typeface);
+
+        textTitle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(BossAct.this, DashboardActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish();
+            }
+        });
 
     }
 
